@@ -10,6 +10,7 @@
 #import "LoginViewController.h"
 #import "MenuViewController.h"
 #import "AnimationViewController.h"
+#import "iOSTest-Bridging-Header.h"
 
 @interface MenuViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *chatButton;
