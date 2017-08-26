@@ -8,6 +8,13 @@
 
 #import "AppDelegate.h"
 #import "MenuViewController.h"
+#import "iOSTest-Bridging-Header.h"
+
+#define UIColorFromRGB(rgbValue) \
+[UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
+green:((float)((rgbValue & 0x00FF00) >>  8))/255.0 \
+blue:((float)((rgbValue & 0x0000FF) >>  0))/255.0 \
+alpha:1.0]
 
 @interface AppDelegate ()
 @property (nonatomic, strong) UINavigationController *navController;
@@ -24,7 +31,21 @@
     MenuViewController *mainMenuViewController = [[MenuViewController alloc] initWithNibName:@"MenuViewController" bundle:nil];
     
     self.navController = [[UINavigationController alloc] initWithRootViewController:mainMenuViewController];
-    [self.navController setNavigationBarHidden:YES];
+    [self.navController setNavigationBarHidden:NO];
+    [self.navController.navigationBar setTitleTextAttributes:
+     @{NSForegroundColorAttributeName:[AppDelegate navigationBarTextColor]}];
+    self.navController.navigationBar.tintColor = [UIColor whiteColor];
+    self.navController.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:nil action:nil];
+    
+    if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1) {
+        //iOS 6.1 and earlier
+        self.navController.navigationBar.tintColor = [AppDelegate navigationBarColor ];
+    } else {
+        //iOS 7.0 and later
+        self.navController.navigationBar.barTintColor = [AppDelegate navigationBarColor ];
+        self.navController.navigationBar.translucent = NO;
+    }
+
     self.window.rootViewController = self.navController;
 
     return YES;
@@ -56,5 +77,14 @@
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
++ (UIColor*)navigationBarColor {
+    return UIColorFromRGB(0x00AEBC);
+}
+
++ (UIColor*)navigationBarTextColor {
+    return UIColorFromRGB(0xFFFFFF);
+}
+
 
 @end

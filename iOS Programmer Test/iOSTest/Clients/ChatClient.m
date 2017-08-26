@@ -26,7 +26,22 @@
 
 - (void)fetchChatData:(void (^)(NSArray<Message *> *))completion withError:(void (^)(NSString *error))errorBlock
 {
+    NSURLSessionConfiguration *sessionConfig = [NSURLSessionConfiguration defaultSessionConfiguration];
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:sessionConfig delegate:nil delegateQueue:nil];
+    NSString *urlString = [NSString stringWithFormat: @"http://dev3.apppartner.com/AppPartnerDeveloperTest/scripts/chat_log.php"];
+    NSURL *url = [NSURL URLWithString: urlString];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    request.HTTPMethod = @"GET";
+    NSURLSessionDataTask* task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        if (error == nil) {
+            NSDictionary *responseBody = [NSJSONSerialization JSONObjectWithData: data options: 0 error: nil];
+            NSLog(@"got response: %@", responseBody);
+        } else {
+            NSLog(@"URL Session Task Failed: %@", [error localizedDescription]);
+        }
+    }];
     
+    [task resume];
 }
 
 @end

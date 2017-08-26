@@ -8,8 +8,12 @@
 
 #import "AnimationViewController.h"
 #import "MenuViewController.h"
+#import "iOSTest-Bridging-Header.h"
+#import "iOSTest-Swift.h"
 
 @interface AnimationViewController ()
+@property (weak, nonatomic) IBOutlet UIImageView *logoImageView;
+
 @end
 
 @implementation AnimationViewController
@@ -32,8 +36,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
     self.title = @"Animation";
+    Animations *animations = [[Animations alloc]init];
+
 }
 
 - (IBAction)backAction:(id)sender
@@ -42,7 +47,32 @@
     [self.navigationController pushViewController:mainMenuViewController animated:YES];
 }
 
+# pragma - Spin Action
+
 - (IBAction)didPressSpinButton:(id)sender
 {
+    CABasicAnimation* rotateAction;
+    rotateAction = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
+    rotateAction.toValue = [NSNumber numberWithFloat: M_PI * 2];
+    rotateAction.duration = 1.0;
+    rotateAction.repeatCount = 1;
+    [self.logoImageView.layer addAnimation:rotateAction forKey:@"rotationAnimation"];
 }
+
+# pragma - TouchesMoved
+
+-(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    UITouch *touch = [touches anyObject];
+    if ([touch view] == self.logoImageView)
+    {
+        CGPoint touchPosition = [touch locationInView:touch.window];
+        CGRect oldFrame = self.logoImageView.frame;
+        
+        CGRect newFrame = CGRectMake(touchPosition.x - oldFrame.size.width/2, touchPosition.y -oldFrame.size.height/2, oldFrame.size.width, oldFrame.size.height);
+        self.logoImageView.frame = newFrame;
+    }
+}
+
+
 @end

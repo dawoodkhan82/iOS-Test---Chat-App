@@ -10,7 +10,6 @@
 #import "LoginViewController.h"
 #import "MenuViewController.h"
 #import "AnimationViewController.h"
-#import "iOSTest-Bridging-Header.h"
 
 @interface MenuViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *chatButton;
@@ -44,12 +43,12 @@
 - (void)viewDidLoad
 {
     // TODO: Make the UI look like it does in the mock-up
-    
     [super viewDidLoad];
-    
     self.title = @"Coding Tasks";
+//    self.title = @"Back";
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleBordered target:nil action:nil];
+    self.navigationItem.backBarButtonItem = backButton;
 }
-
 
 - (IBAction)didPressChatButton:(id)sender
 {

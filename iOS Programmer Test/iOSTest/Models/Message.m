@@ -19,6 +19,7 @@
         self.username = dictionary[@"username"];
         self.avatarURL = [NSURL URLWithString:dictionary[@"avatar_url"]];
         self.text = dictionary[@"message"];
+        self.avatarImage = dictionary[@""];
     }
     
     return self;

@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8E52221A1F4EF4D1009084B1 /* Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5222191F4EF4D1009084B1 /* Animations.swift */; };
 		8E5D13B11F4C0C0D00287559 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5D13B01F4C0C0D00287559 /* RoundButton.swift */; };
+		8EC24F301F4CD51F00CBF44F /* CustomUINavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC24F2F1F4CD51F00CBF44F /* CustomUINavigationBar.swift */; };
 		F21312DA1E0481F80029E33F /* ChatClient.m in Sources */ = {isa = PBXBuildFile; fileRef = F21312D71E0481F80029E33F /* ChatClient.m */; };
 		F21312DB1E0481F80029E33F /* LoginClient.m in Sources */ = {isa = PBXBuildFile; fileRef = F21312D91E0481F80029E33F /* LoginClient.m */; };
 		F21312E01E0485B50029E33F /* AnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F21312DE1E0485B50029E33F /* AnimationViewController.m */; };
@@ -29,8 +31,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8E5222191F4EF4D1009084B1 /* Animations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animations.swift; sourceTree = "<group>"; };
 		8E5D13AF1F4C0C0C00287559 /* iOSTest-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iOSTest-Bridging-Header.h"; sourceTree = "<group>"; };
 		8E5D13B01F4C0C0D00287559 /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
+		8EC24F2F1F4CD51F00CBF44F /* CustomUINavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUINavigationBar.swift; sourceTree = "<group>"; };
 		F21312D61E0481F80029E33F /* ChatClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChatClient.h; path = Clients/ChatClient.h; sourceTree = "<group>"; };
 		F21312D71E0481F80029E33F /* ChatClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChatClient.m; path = Clients/ChatClient.m; sourceTree = "<group>"; };
 		F21312D81E0481F80029E33F /* LoginClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginClient.h; path = Clients/LoginClient.h; sourceTree = "<group>"; };
@@ -105,6 +109,8 @@
 			isa = PBXGroup;
 			children = (
 				F264BDA81D7F4F0500275D46 /* Assets.xcassets */,
+				8E5222191F4EF4D1009084B1 /* Animations.swift */,
+				8EC24F2F1F4CD51F00CBF44F /* CustomUINavigationBar.swift */,
 				8E5D13B01F4C0C0D00287559 /* RoundButton.swift */,
 				8E5D13AF1F4C0C0C00287559 /* iOSTest-Bridging-Header.h */,
 				F2837BEE1D9AE99D00A57AC8 /* Clients */,
@@ -291,12 +297,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EC24F301F4CD51F00CBF44F /* CustomUINavigationBar.swift in Sources */,
 				F273B6321D95B1D50069037F /* ChatTableViewCell.m in Sources */,
 				F264BDA11D7F4F0400275D46 /* AppDelegate.m in Sources */,
 				F273B6411D95BD500069037F /* Message.m in Sources */,
 				F264BDB61D7F503300275D46 /* MenuViewController.m in Sources */,
 				8E5D13B11F4C0C0D00287559 /* RoundButton.swift in Sources */,
 				F264BDD61D7F642200275D46 /* LoginViewController.m in Sources */,
+				8E52221A1F4EF4D1009084B1 /* Animations.swift in Sources */,
 				F21312DA1E0481F80029E33F /* ChatClient.m in Sources */,
 				F21312DB1E0481F80029E33F /* LoginClient.m in Sources */,
 				F21312E01E0485B50029E33F /* AnimationViewController.m in Sources */,
@@ -400,6 +408,7 @@
 				FRAMEWORK_SEARCH_PATHS = "";
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = iOSTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.apppartner.iOSTest;
@@ -421,6 +430,7 @@
 				FRAMEWORK_SEARCH_PATHS = "";
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = iOSTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.apppartner.iOSTest;
