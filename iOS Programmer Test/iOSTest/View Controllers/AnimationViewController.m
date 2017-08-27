@@ -37,14 +37,6 @@
 {
     [super viewDidLoad];
     self.title = @"Animation";
-    Animations *animations = [[Animations alloc]init];
-
-}
-
-- (IBAction)backAction:(id)sender
-{
-    MenuViewController *mainMenuViewController = [[MenuViewController alloc] init];
-    [self.navigationController pushViewController:mainMenuViewController animated:YES];
 }
 
 # pragma - Spin Action
@@ -58,6 +50,24 @@
     rotateAction.repeatCount = 1;
     [self.logoImageView.layer addAnimation:rotateAction forKey:@"rotationAnimation"];
 }
+
+# pragma - Bounce Action
+
+- (IBAction)didPressBounceButton:(id)sender {
+    Animations *animations = [[Animations alloc]init];
+    //Bounce function in Swift Animations file
+    [animations bounce:_logoImageView];
+}
+
+# pragma - Fade Action
+
+- (IBAction)didPressFadeButton:(id)sender
+{
+    Animations *animations = [[Animations alloc]init];
+    //Fade function in Swift Animations file
+    [animations fade:_logoImageView];
+}
+
 
 # pragma - TouchesMoved
 

@@ -62,13 +62,14 @@ BOOL success = false;
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)backAction:(id)sender
+
+-(void)backAction
 {
-    MenuViewController *mainMenuViewController = [[MenuViewController alloc] init];
-    [self.navigationController pushViewController:mainMenuViewController animated:YES];
+//    MenuViewController *mainMenuViewController = [[MenuViewController alloc] init];
+//    [self.navigationController pushViewController:mainMenuViewController animated:YES];
+    [self.navigationController popViewControllerAnimated:YES];
+
 }
-
-
 
 # pragma Alert
 
@@ -88,7 +89,7 @@ BOOL success = false;
                                 handler:^(UIAlertAction * action) {
                                     if(success){
                                         success = false;
-                                        [self backAction:nil];
+                                        [self backAction];
                                     }
                                     else{
                                         [_usernameTextField becomeFirstResponder];
@@ -96,13 +97,11 @@ BOOL success = false;
                                 }];
     
     [alert addAction:okButton];
-    
     [self presentViewController:alert animated:YES completion:nil];
     
     if([title  isEqual: @"Success"]){
         success = true;
     }
-    
 }
 
 - (IBAction)didPressLoginButton:(id)sender

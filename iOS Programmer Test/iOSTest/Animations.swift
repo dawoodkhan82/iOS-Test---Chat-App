@@ -11,7 +11,8 @@ import UIKit
 
 @objc public class Animations: NSObject {
     
-    func bounce(_ sender: AnyObject) {
+    func bounce(_ sender: AnyObject)
+    {
         let logoImage = sender as! UIImageView
         let bounds = logoImage.bounds
         
@@ -27,6 +28,20 @@ import UIKit
             }
         }
     }
+    
+    
+    func fade(_ sender: AnyObject)
+    {
+        let logoImage = sender as! UIImageView
+        
+        UIView.animate(withDuration: 1) {
+            logoImage.alpha = 0.0
+        }
+        
+        UIView.animate(withDuration: 1) {
+            logoImage.alpha = 1
+        }
 
+    }
     
 }
