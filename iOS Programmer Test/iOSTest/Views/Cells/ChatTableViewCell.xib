@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -18,28 +19,38 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eQE-qa-aW7">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eQE-qa-aW7">
                         <rect key="frame" x="60" y="8" width="252" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="OEc-0K-A1c"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rdm-Aa-1bM">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Rdm-Aa-1bM">
                         <rect key="frame" x="8" y="8" width="44" height="44"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="44" id="Ow9-d2-JDg"/>
                             <constraint firstAttribute="width" constant="44" id="jaY-8o-MDv"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QXL-I2-8fZ">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QXL-I2-8fZ">
                         <rect key="frame" x="60" y="31" width="252" height="19.5"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <color key="textColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="QXL-I2-8fZ" firstAttribute="top" secondItem="eQE-qa-aW7" secondAttribute="bottom" constant="2" id="3pF-vC-p13"/>
+                    <constraint firstAttribute="topMargin" secondItem="eQE-qa-aW7" secondAttribute="top" id="BSo-9L-0w8"/>
+                    <constraint firstAttribute="leadingMargin" secondItem="Rdm-Aa-1bM" secondAttribute="leading" id="mYn-La-21B"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="eQE-qa-aW7" secondAttribute="trailing" id="nOG-VG-5xa"/>
+                    <constraint firstAttribute="topMargin" secondItem="Rdm-Aa-1bM" secondAttribute="top" id="oEL-83-Dqy"/>
+                    <constraint firstItem="eQE-qa-aW7" firstAttribute="leading" secondItem="Rdm-Aa-1bM" secondAttribute="trailing" constant="8" id="vRZ-Qc-9NU"/>
+                    <constraint firstItem="QXL-I2-8fZ" firstAttribute="leading" secondItem="Rdm-Aa-1bM" secondAttribute="trailing" constant="8" id="woF-hf-qQd"/>
+                </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="avatarImageView" destination="Rdm-Aa-1bM" id="5NM-Xh-uvx"/>

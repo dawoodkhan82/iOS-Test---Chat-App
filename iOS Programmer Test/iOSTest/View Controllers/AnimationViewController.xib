@@ -20,10 +20,12 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R4X-eb-ZnV" customClass="RoundedButton" customModule="iOSTest">
-                    <rect key="frame" x="56" y="446" width="263" height="56"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R4X-eb-ZnV" customClass="RoundedButton" customModule="iOSTest">
+                    <rect key="frame" x="56" y="446" width="263" height="48"/>
                     <color key="backgroundColor" red="0.2627450980392157" green="0.45490196078431372" blue="0.72941176470588232" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="sM5-mk-lJj"/>
+                    </constraints>
                     <state key="normal" title="Spin">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -31,14 +33,12 @@
                         <action selector="didPressSpinButton:" destination="-1" eventType="touchUpInside" id="3dt-QU-jHh"/>
                     </connections>
                 </button>
-                <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_logo" translatesAutoresizingMaskIntoConstraints="NO" id="5DT-RY-uzd" userLabel="Logo Image">
-                    <rect key="frame" x="90" y="186" width="194" height="172"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                </imageView>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="36I-jr-h4z" customClass="RoundedButton" customModule="iOSTest">
-                    <rect key="frame" x="56" y="510" width="263" height="56"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="36I-jr-h4z" customClass="RoundedButton" customModule="iOSTest">
+                    <rect key="frame" x="56" y="510" width="263" height="48"/>
                     <color key="backgroundColor" red="0.26274509800000001" green="0.4549019608" blue="0.72941176470000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="Ki8-8V-h1B"/>
+                    </constraints>
                     <state key="normal" title="Bounce">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -46,10 +46,12 @@
                         <action selector="didPressBounceButton:" destination="-1" eventType="touchUpInside" id="6FN-He-q6P"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mgn-vi-kgT" customClass="RoundedButton" customModule="iOSTest">
-                    <rect key="frame" x="56" y="574" width="263" height="56"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mgn-vi-kgT" customClass="RoundedButton" customModule="iOSTest">
+                    <rect key="frame" x="56" y="574" width="263" height="48"/>
                     <color key="backgroundColor" red="0.26274509800000001" green="0.4549019608" blue="0.72941176470000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="KJE-Ca-IGj"/>
+                    </constraints>
                     <state key="normal" title="Fade">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -57,8 +59,28 @@
                         <action selector="didPressFadeButton:" destination="-1" eventType="touchUpInside" id="TUN-Wd-LvF"/>
                     </connections>
                 </button>
+                <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_logo" translatesAutoresizingMaskIntoConstraints="NO" id="5DT-RY-uzd" userLabel="Logo Image">
+                    <rect key="frame" x="125" y="181" width="125" height="125"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="125" id="DZC-zb-4xN"/>
+                        <constraint firstAttribute="width" constant="125" id="uDh-1z-HHb"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="5DT-RY-uzd" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-90" id="7Po-J6-07B"/>
+                <constraint firstAttribute="trailing" secondItem="Mgn-vi-kgT" secondAttribute="trailing" constant="56" id="9pt-GL-16v"/>
+                <constraint firstItem="36I-jr-h4z" firstAttribute="top" secondItem="R4X-eb-ZnV" secondAttribute="bottom" constant="16" id="Eeo-7l-JM2"/>
+                <constraint firstItem="5DT-RY-uzd" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="I57-Q4-oEE"/>
+                <constraint firstItem="36I-jr-h4z" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="56" id="RBv-Gf-oh3"/>
+                <constraint firstAttribute="trailing" secondItem="36I-jr-h4z" secondAttribute="trailing" constant="56" id="Sq4-sm-8N8"/>
+                <constraint firstItem="R4X-eb-ZnV" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="56" id="VjR-t4-8re"/>
+                <constraint firstItem="Mgn-vi-kgT" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="56" id="YIr-3y-kEh"/>
+                <constraint firstAttribute="trailing" secondItem="R4X-eb-ZnV" secondAttribute="trailing" constant="56" id="hcx-wk-vVa"/>
+                <constraint firstItem="Mgn-vi-kgT" firstAttribute="top" secondItem="36I-jr-h4z" secondAttribute="bottom" constant="16" id="oyt-AI-gsC"/>
+                <constraint firstAttribute="bottom" secondItem="Mgn-vi-kgT" secondAttribute="bottom" constant="45" id="tzI-iW-daP"/>
+            </constraints>
             <point key="canvasLocation" x="34.5" y="54.5"/>
         </view>
     </objects>
