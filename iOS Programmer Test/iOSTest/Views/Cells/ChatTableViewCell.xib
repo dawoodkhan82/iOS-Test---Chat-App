@@ -35,21 +35,22 @@
                             <constraint firstAttribute="width" constant="44" id="jaY-8o-MDv"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QXL-I2-8fZ">
-                        <rect key="frame" x="60" y="31" width="252" height="19.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QXL-I2-8fZ">
+                        <rect key="frame" x="60" y="31" width="244" height="19.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <color key="textColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="QXL-I2-8fZ" firstAttribute="top" secondItem="eQE-qa-aW7" secondAttribute="bottom" constant="2" id="3pF-vC-p13"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="QXL-I2-8fZ" secondAttribute="trailing" constant="8" id="0Qm-df-ppZ"/>
                     <constraint firstAttribute="topMargin" secondItem="eQE-qa-aW7" secondAttribute="top" id="BSo-9L-0w8"/>
+                    <constraint firstItem="QXL-I2-8fZ" firstAttribute="top" secondItem="eQE-qa-aW7" secondAttribute="bottom" constant="2" id="PRd-4h-OqT"/>
                     <constraint firstAttribute="leadingMargin" secondItem="Rdm-Aa-1bM" secondAttribute="leading" id="mYn-La-21B"/>
                     <constraint firstAttribute="trailingMargin" secondItem="eQE-qa-aW7" secondAttribute="trailing" id="nOG-VG-5xa"/>
                     <constraint firstAttribute="topMargin" secondItem="Rdm-Aa-1bM" secondAttribute="top" id="oEL-83-Dqy"/>
+                    <constraint firstItem="QXL-I2-8fZ" firstAttribute="leading" secondItem="Rdm-Aa-1bM" secondAttribute="trailing" constant="8" id="sOX-AS-g4Y"/>
                     <constraint firstItem="eQE-qa-aW7" firstAttribute="leading" secondItem="Rdm-Aa-1bM" secondAttribute="trailing" constant="8" id="vRZ-Qc-9NU"/>
-                    <constraint firstItem="QXL-I2-8fZ" firstAttribute="leading" secondItem="Rdm-Aa-1bM" secondAttribute="trailing" constant="8" id="woF-hf-qQd"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
@@ -57,7 +58,7 @@
                 <outlet property="body" destination="QXL-I2-8fZ" id="v6l-xu-u74"/>
                 <outlet property="header" destination="eQE-qa-aW7" id="Njh-tA-sWZ"/>
             </connections>
-            <point key="canvasLocation" x="35" y="67.5"/>
+            <point key="canvasLocation" x="35" y="67"/>
         </tableViewCell>
     </objects>
 </document>

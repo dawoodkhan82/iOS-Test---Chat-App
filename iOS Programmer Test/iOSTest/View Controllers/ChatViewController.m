@@ -91,6 +91,7 @@
                         {
                             Message *chatData = [[Message alloc] init];
                             id MessageObjectAllocation = [chatData initWithDictionary:responseBody];
+                            //Can print MessageObjectAllocation here
                             [self.messages addObject:chatData];
                             dispatch_async(dispatch_get_main_queue(), ^{
                                 [self.chatTable reloadData];
