@@ -45,8 +45,7 @@
     // TODO: Make the UI look like it does in the mock-up
     [super viewDidLoad];
     self.title = @"Coding Tasks";
-//    self.title = @"Back";
-    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleBordered target:nil action:nil];
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:nil action:nil];
     self.navigationItem.backBarButtonItem = backButton;
 }
 

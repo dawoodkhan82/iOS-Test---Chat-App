@@ -14,7 +14,6 @@
 #import "AppDelegate.h"
 
 #define jsonQueue dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
-
 #define TABLE_CELL_HEIGHT 62.0f
 
 @interface ChatViewController () <UITableViewDelegate, UITableViewDataSource>
@@ -96,7 +95,6 @@
                             dispatch_async(dispatch_get_main_queue(), ^{
                                 [self.chatTable reloadData];
                             });
-                            
                         }
                     }
                 };
@@ -105,7 +103,6 @@
                 NSLog(@"URL Session Task Failed: %@", [error localizedDescription]);
             }
         }];
-        
         
         [task resume];
         

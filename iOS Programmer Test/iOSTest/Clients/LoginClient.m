@@ -41,13 +41,12 @@
     [request setHTTPBody:[NSData dataWithBytes:[bodyData UTF8String] length:strlen([bodyData UTF8String])]];
     NSDate *startTime = [NSDate date];
     
-    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue]
-                           completionHandler:^(NSURLResponse *response, NSData *data, NSError *err){
-                               
-                               if(err == nil){
+    [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData *data,NSURLResponse *response,NSError *error)
+     {
+                               if(error == nil){
                                    
                                    NSTimeInterval callTime = -[startTime timeIntervalSinceNow];
-                                   id JSONdata = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&err];
+                                   id JSONdata = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
                                    if([JSONdata isKindOfClass:[NSDictionary class]]){
                                        NSDictionary *jsonDict = (NSDictionary *) JSONdata;
                                        NSLog(@"%@%f",jsonDict,callTime);
@@ -55,7 +54,7 @@
                                    }
                                }
                                else{
-                                   NSLog(@"%@",err);
+                                   NSLog(@"%@",error);
                                }
                            }];
 }

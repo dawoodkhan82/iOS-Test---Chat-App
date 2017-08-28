@@ -11,6 +11,7 @@ import UIKit
 
 @objc public class Animations: NSObject {
     
+    
     func bounce(_ sender: AnyObject)
     {
         let logoImage = sender as! UIImageView
@@ -19,12 +20,11 @@ import UIKit
         UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 10, options: .curveEaseInOut, animations: {
             logoImage.bounds = CGRect(x: bounds.origin.x - 20, y: bounds.origin.y, width: bounds.size.width + 60, height: bounds.size.height)
         }) { (success:Bool) in
+            
             if success {
-                
                 UIView.animate(withDuration: 0.5, animations: {
                     logoImage.bounds = bounds
                 })
-                
             }
         }
     }
@@ -41,7 +41,17 @@ import UIKit
         UIView.animate(withDuration: 1) {
             logoImage.alpha = 1
         }
-
+    }
+    
+    
+    func backgroundColorLoop(_ sender: AnyObject)
+    {
+        let viewController = sender as! UIViewController
+        UIView.animate(withDuration: 2, delay: 0.0, options:[UIViewAnimationOptions.allowUserInteraction, UIViewAnimationOptions.repeat, UIViewAnimationOptions.autoreverse], animations: {
+            viewController.view.backgroundColor = UIColor.green
+            viewController.view.backgroundColor = UIColor.gray
+            viewController.view.backgroundColor = UIColor.red
+        }, completion: nil)
     }
     
 }

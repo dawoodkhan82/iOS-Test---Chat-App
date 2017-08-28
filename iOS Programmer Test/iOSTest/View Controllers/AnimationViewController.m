@@ -8,7 +8,6 @@
 
 #import "AnimationViewController.h"
 #import "MenuViewController.h"
-#import "iOSTest-Bridging-Header.h"
 #import "iOSTest-Swift.h"
 
 @interface AnimationViewController ()
@@ -37,6 +36,9 @@
 {
     [super viewDidLoad];
     self.title = @"Animation";
+    Animations *animations = [[Animations alloc]init];
+    //Background color loop function in Swift Animations file
+    [animations backgroundColorLoop:self];
 }
 
 # pragma - Spin Action

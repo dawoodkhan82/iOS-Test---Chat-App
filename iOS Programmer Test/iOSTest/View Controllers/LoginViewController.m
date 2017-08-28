@@ -54,6 +54,8 @@ BOOL success = false;
     self.navigationController.navigationBar.backItem.title = @"Back";
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dismissKeyboard)];
     [self.view addGestureRecognizer:tap];
+    [_usernameTextField setDelegate:self];
+    [_passwordTextField setDelegate:self];
 }
 
 - (void)didReceiveMemoryWarning
@@ -65,10 +67,7 @@ BOOL success = false;
 
 -(void)backAction
 {
-//    MenuViewController *mainMenuViewController = [[MenuViewController alloc] init];
-//    [self.navigationController pushViewController:mainMenuViewController animated:YES];
     [self.navigationController popViewControllerAnimated:YES];
-
 }
 
 # pragma Alert
@@ -125,22 +124,21 @@ BOOL success = false;
     NSDate *startTime = [NSDate date];
     
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue]
-                           completionHandler:^(NSURLResponse *response, NSData *data, NSError *err){
-                               
-                               if(err == nil){
+                           completionHandler:^(NSURLResponse *response, NSData *data, NSError *error){
+
+                               if(error == nil){
                                    
                                    NSTimeInterval callTime = -[startTime timeIntervalSinceNow];
-                                   id JSONdata = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&err];
+                                   id JSONdata = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
                                    if([JSONdata isKindOfClass:[NSDictionary class]]){
                                        NSDictionary *jsonDict = (NSDictionary *) JSONdata;
                                        [self showAlert:[jsonDict objectForKey:@"code"]: [NSString stringWithFormat:@"%@ \nTime: %f",[jsonDict objectForKey:@"message"], callTime]];
                                    }
                                }
                                else{
-                                   [self showAlert:@"Error" : err.localizedDescription];
+                                   [self showAlert:@"Error" : error.localizedDescription];
                                }
                            }];
-
 }
 
 

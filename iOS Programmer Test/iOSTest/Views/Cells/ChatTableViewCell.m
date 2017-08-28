@@ -38,9 +38,6 @@
 
 - (void)setCellData:(Message *)message
 {
-//    [self.header setText:message.username];
-//    [self.body setText:message.text];
-    
     self.header.text = message.username;
     self.body.text = message.text;
     [self.header sizeToFit];
@@ -89,11 +86,12 @@
                                        queue:[NSOperationQueue mainQueue]
                            completionHandler:^(NSURLResponse *response, NSData *data, NSError *error)
      {
-         if ( !error )
+         if (!error)
          {
              UIImage *image = [[UIImage alloc] initWithData:data];
              completionBlock(YES,image);
-         } else{
+         } else
+         {
              completionBlock(NO,nil);
          }
      }];
